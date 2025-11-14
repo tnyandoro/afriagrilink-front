@@ -14,7 +14,7 @@ const Register = () => {
       password: form.password.value,
       password_confirmation: form.password_confirmation.value,
       name: form.name.value,
-      role: form.role.value, // e.g. farmer, trucking, market
+      role: form.role.value,
     };
 
     try {
@@ -27,12 +27,17 @@ const Register = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="min-h-screen w-screen bg-register-bg bg-cover bg-center flex items-center justify-center relative">
+      {/* Overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
+
       <form
         onSubmit={handleRegister}
-        className="bg-white p-6 rounded-lg shadow-md w-96"
+        className="relative z-10 bg-white bg-opacity-90 p-8 rounded-lg shadow-md w-96"
       >
-        <h2 className="text-2xl font-semibold mb-4 text-center">Register</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">
+          Register
+        </h2>
 
         <input
           type="text"

@@ -7,6 +7,7 @@ import {
   CurrencyDollarIcon,
   ChartBarIcon,
 } from "@heroicons/react/24/outline";
+import DashboardHeader from "../components/DashboardHeader";
 
 const MarketDashboard = () => {
   const [stats, setStats] = useState({});
@@ -32,27 +33,30 @@ const MarketDashboard = () => {
 
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
-      <h1 className="text-2xl font-bold mb-6">Market Dashboard</h1>
+      <DashboardHeader title="Market Dashboard" />
+      <div className="p-6 bg-gray-50 min-h-screen">
+        <h1 className="text-2xl font-bold mb-6">Market Dashboard</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <StatCard
-          title="Active Produce Listings"
-          value={stats.active_listings || 0}
-          icon={ShoppingBagIcon}
-        />
-        <StatCard
-          title="Total Purchases"
-          value={stats.total_purchases || 0}
-          icon={CurrencyDollarIcon}
-        />
-        <StatCard
-          title="Vendors Engaged"
-          value={stats.total_farmers || 0}
-          icon={ChartBarIcon}
-        />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <StatCard
+            title="Active Produce Listings"
+            value={stats.active_listings || 0}
+            icon={ShoppingBagIcon}
+          />
+          <StatCard
+            title="Total Purchases"
+            value={stats.total_purchases || 0}
+            icon={CurrencyDollarIcon}
+          />
+          <StatCard
+            title="Vendors Engaged"
+            value={stats.total_farmers || 0}
+            icon={ChartBarIcon}
+          />
+        </div>
+
+        <ChartCard title="Monthly Purchase Volume" data={chartData} />
       </div>
-
-      <ChartCard title="Monthly Purchase Volume" data={chartData} />
     </div>
   );
 };

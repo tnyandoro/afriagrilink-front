@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "../api/axiosClient";
 import StatCard from "../components/StatCard";
 import ChartCard from "../components/ChartCard";
+import DashboardHeader from "../components/DashboardHeader";
 
 const FarmerDashboard = () => {
   const [stats, setStats] = useState({});
@@ -18,8 +19,8 @@ const FarmerDashboard = () => {
   }, []);
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Farmer Dashboard</h1>
+    <div className="p-6 bg-gray-50 min-h-screen">
+      <DashboardHeader title="Farmer Dashboard" />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <StatCard title="Total Produce" value={stats.total_produce || 0} />
         <StatCard

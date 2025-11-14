@@ -1,8 +1,13 @@
-/** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "login-bg": "url('/src/assets/images/bg-login.jpg')",
+        "register-bg": "url('/src/assets/images/bg-register.jpg')",
+        "bg-landing": "url('/src/assets/images/bg-landing.jpg')",
+      },
+    },
   },
   plugins: [],
 };
